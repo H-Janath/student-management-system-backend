@@ -9,4 +9,5 @@ public interface StudentSerivece {
     StudentEntity createStudent(Student student);
 
     List<Student> retriveStudent();
+    public boolean removeStudent(Long studentId);
 }

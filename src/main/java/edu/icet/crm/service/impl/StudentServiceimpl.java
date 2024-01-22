@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentServiceimpl implements StudentSerivece {
@@ -25,17 +27,25 @@ public class StudentServiceimpl implements StudentSerivece {
 
     @Override
     public List<Student> retriveStudent() {
+        List<Student> list = new ArrayList<>();
         Iterable<StudentEntity> studentRepositoryAll = studentRepository.findAll();
-        List<Student> studentList  = new ArrayList<>();
-        for(StudentEntity student:studentRepositoryAll){
-            studentList.add(
-                    new Student(
-                            student.getFirstName(),
-                            student.getLastName(),
-                            student.getContactNumber()
-                    )
-            );
+        Iterator<StudentEntity> iterator = studentRepositoryAll.iterator();
+        while(iterator.hasNext()){
+            StudentEntity entity = iterator.next();
+            Student student = mapper.convertValue(entity,Student.class);
+            list.add(student);
         }
-        return studentList;
+        return list;
+    }
+
+
+     public boolean removeStudent(Long id){
+        Optional<StudentEntity> studentEntityOptional = studentRepository.findById(id);
+        if(studentEntityOptional.isPresent()){
+            StudentEntity entity = studentEntityOptional.get();
+            studentRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }
