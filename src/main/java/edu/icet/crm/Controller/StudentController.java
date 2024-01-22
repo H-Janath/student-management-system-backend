@@ -27,11 +27,9 @@ public class StudentController {
 
     @DeleteMapping("/student/{studentId}")
     Response removeStudent(@PathVariable Long studentId){
-        boolean isRemoved = studentSerivece.removeStudent(studentId);
-        if(isRemoved){
-            return new Response("Removed Student");
-        }else{
-            return new Response("unsuccess");
-        }
+       return studentSerivece.removeStudent(studentId)?
+               new Response(String.format("Removed Student id(%s) ",studentId))
+               :new Response(String.format("Student id(%s) Invalid",studentId));
+
     }
 }
