@@ -1,4 +1,5 @@
 package edu.icet.crm.Controller;
+
 import edu.icet.crm.dto.Response;
 import edu.icet.crm.dto.Student;
 import edu.icet.crm.entity.StudentEntity;
@@ -6,10 +7,7 @@ import edu.icet.crm.service.StudentSerivece;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 @CrossOrigin
 @RestController

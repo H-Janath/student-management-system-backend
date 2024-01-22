@@ -34,3 +34,9 @@ d
 4src/main/java/edu/icet/crm/entity/StudentEntity.java,9\4\94407a9c29e2573ec85cc85daa06e2d0f50ddcfd
 \
 ,src/main/java/edu/icet/crm/dto/Response.java,0\c\0c1eefd759368c8c46600506d26d60175621f6e2
+w
+G.idea/sonarlint/issuestore/0/c/0c1eefd759368c8c46600506d26d60175621f6e2,b\9\b9eef4a66edd08c9bf2441e3e2b3893a3b210f11
+Å
+Q.idea/sonarlint/securityhotspotstore/0/c/0c1eefd759368c8c46600506d26d60175621f6e2,4\7\47dbf26188f3cea45cda7f55e2a3b9eff586299a
+r
+Bsrc/main/java/edu/icet/crm/repository/StudentNativeRepository.java,6\6\66cfa4239f7601f9389cee505d899485afabd550
