@@ -3,6 +3,7 @@ package edu.icet.crm.service.impl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.icet.crm.dto.Student;
 import edu.icet.crm.entity.StudentEntity;
+import edu.icet.crm.repository.StudentNativeRepository;
 import edu.icet.crm.repository.StudentRepository;
 import edu.icet.crm.service.StudentSerivece;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ public class StudentServiceimpl implements StudentSerivece {
     @Autowired
     StudentRepository studentRepository;
 
+    @Autowired(required = true)
+    StudentNativeRepository studentNativeRepository;
     @Autowired
     ObjectMapper mapper;
     public StudentEntity createStudent(Student student){
@@ -39,13 +42,14 @@ public class StudentServiceimpl implements StudentSerivece {
     }
 
 
-     public boolean removeStudent(Long id){
-        Optional<StudentEntity> studentEntityOptional = studentRepository.findById(id);
+     public boolean removeStudent(Long studentId){
+        Optional<StudentEntity> studentEntityOptional = studentRepository.findById(studentId);
         if(studentEntityOptional.isPresent()){
             StudentEntity entity = studentEntityOptional.get();
-            studentRepository.deleteById(id);
+            studentRepository.deleteById(studentId);
             return true;
         }
         return false;
+//         return studentNativeRepository.removedStudent(studentId);
     }
 }

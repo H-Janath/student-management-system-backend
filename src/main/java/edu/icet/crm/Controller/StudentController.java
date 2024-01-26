@@ -18,6 +18,11 @@ public class StudentController {
     public StudentEntity ceateStudent(@RequestBody Student student){
        return studentSerivece.createStudent(student);
     }
+
+    @PatchMapping("/student")
+    public StudentEntity updateStudent(@RequestBody Student student){
+        return studentSerivece.createStudent(student);
+    }
     @GetMapping("/student")
     List<Student> getStudent(){
         return studentSerivece.retriveStudent();
@@ -28,6 +33,5 @@ public class StudentController {
        return studentSerivece.removeStudent(studentId)?
                new Response(String.format("Removed Student id(%s) ",studentId))
                :new Response(String.format("Student id(%s) Invalid",studentId));
-
     }
 }

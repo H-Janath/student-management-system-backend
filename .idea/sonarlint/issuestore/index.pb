@@ -40,3 +40,5 @@ G.idea/sonarlint/issuestore/0/c/0c1eefd759368c8c46600506d26d60175621f6e2,b\9\b9
 Q.idea/sonarlint/securityhotspotstore/0/c/0c1eefd759368c8c46600506d26d60175621f6e2,4\7\47dbf26188f3cea45cda7f55e2a3b9eff586299a
 r
 Bsrc/main/java/edu/icet/crm/repository/StudentNativeRepository.java,6\6\66cfa4239f7601f9389cee505d899485afabd550
+{
+Ksrc/main/java/edu/icet/crm/repository/impl/StudentNativeRepositoryImpl.java,c\4\c4cecac5b82a2024623da7550256531def4e40b0
